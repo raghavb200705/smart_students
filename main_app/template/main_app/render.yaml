@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: smart-students
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn smart_students.wsgi:application
+    envVars:
+      - key: DJANGO_SECRET_KEY
+        value: django-insecure-uqoww^f9v_dh8n!h5@kv0wsu2tbp5pl#u1rtajp4@q)9hj)ep_
+      - key: DJANGO_SETTINGS_MODULE
+        value: smart_students.settings
