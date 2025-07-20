@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-ALLOWED_ROLL_NUMBERS = ['S001', 'S002', 'A001', 'A002']  # Add more later
+ALLOWED_ROLL_NUMBERS = ['S001', 'S002', 'A001', 'A002']  # Add your own
 
 def splash_screen(request):
     return render(request, 'main_app/splash.html')
@@ -18,5 +18,8 @@ def login_view(request):
             return render(request, 'main_app/splash.html', {'error': 'Invalid Roll Number'})
 
     return redirect('splash')
+def home_view(request):
+    return render(request, 'main_app/home.html')
+
 
 
